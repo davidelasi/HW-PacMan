@@ -7,17 +7,14 @@ Then make it bounce off the boundary at x = 0px.
 You will need to take into account the size of the image.
 
 */
-var exercise = {};
+var exercise = {}; // This encapsulation is done to encapsulate the namespace ...REVIEW
 
 exercise.flag = 0; // 0 = mouth open  1 = mouth shut
 exercise.increment = 20; // pixels to move either + or -
 exercise.counter = 0; // counter, initialized at 0
-exercise.pos = {}; // create empty object 'position'
-exercise.pos.x = 0; // x position of packman, initialized at 0
-
 
 exercise.run = function() {
-    exercise.img1 = document.getElementById('PacMan');
+    exercise.img1 = document.getElementById('PacMan');  // is this redundant?
     exercise.updatePosition();
     exercise.checkWallCollision();
     exercise.chooseImage();
@@ -62,7 +59,7 @@ exercise.chooseImage = function() {
 exercise.checkWallCollision = function() {
     // reset the direction of motion if wall is hit
     // you need to take into account image width
-    if (exercise.pos.x>=400||exercise.pos.x<=0){
+    if (exercise.pos.x>=600||exercise.pos.x<=0){
         exercise.increment= -exercise.increment;
     };
 };
